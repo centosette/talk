@@ -1,0 +1,34 @@
+Description of the flow
+
+===== STARTUP =====
+1. User starts the application
+2. Application reads configuration file
+3. User ID is required/assigned if not in the configuration file
+
+--> FORK
+
+4. Server starts accepting connections
+5. Client prompts for connection
+
+===== INITIATE CALL =====
+1. User types in the server name or IP address
+2. Application tries to connect
+3. Upon success, prompts the user to enter message
+4. Upon failure, prompts the user for other connection
+
+===== RECEIVE CALL =====
+1. The server prompts the user for the incoming call, showing caller's
+ID
+2. User accepts the call
+3. Server receives a message from the caller and shows it
+4. Application prompts user for response
+
+===== CALL WHILE IN A SESSION =====
+1. The user is making a chat session and wants to invite someone else
+2. type the escape character '\' and the command 'call <address>'
+3. This creates a new session, if the other end accepts
+4. When a message is typed in by any of the connected ends, it is
+broadcasted to the others. This means that if an end has multiple
+connections, it has to broadcast the message too the others
+5. There must be a top-level in each end, aware of all the connections
+and responsible for the broadcasting activity.

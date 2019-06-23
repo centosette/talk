@@ -1,0 +1,19 @@
+General application structure
+
+
+                                       talkcore.h
+				           |
+			____________________________________________________________________________________
+			|                                 |                               |                 |
+                        
+		talkconfig.h                       connection.h                      uinterface.h      interpreter.h
+		                                          |                               |
+			|			_____________________               <specialized ui>
+		<specialized_config_manager>				|                   |
+
+                                           comlogic.h           ipc/tcp.h
+					        |
+
+					   serialize.h
+						
+					   

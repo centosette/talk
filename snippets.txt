@@ -1,0 +1,12 @@
+#define COMMAND(NAME) {#NAME, NAME ## _command}
+
+struct command {
+  char *command_name;
+  void (*function)(void);
+};
+
+struct command command_set[]{
+  COMMAND(quit);
+  COMMAND(accept);
+  COMMAND(reject);
+}
